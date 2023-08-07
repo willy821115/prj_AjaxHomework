@@ -13,12 +13,12 @@
     <script src="~/datas/travel.js"></script>
 
     <script>
-        const DataFromJS = spots.CommonFormat.Section.map(product=>{
-            const { file, stitle, xbody } = product
+        const DataFromJS = spots.CommonFormat.Section.map(product => {
+            const { file.img[0].text, stitle, xbody } = product
 
             return(
             `<div class="card" style="width: 18rem;">
-              <img src="${file.img[0]}" class="card-img-top" alt="...">
+                             <img src="${file.img[0].text}" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">${stitle}</h5>
              <p class="card-text">${xbody}</p>
@@ -29,7 +29,7 @@
             )
         })
 
-        document.querySelector('#content').innerHTML = datas.join("")
+        document.querySelector('#content').innerHTML = DataFromJS.join("")
 
 
     </script>
